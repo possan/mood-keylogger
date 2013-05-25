@@ -34,6 +34,54 @@
 			}
 		},
 
+		{	
+			"comment": ":(",
+			"pattern": ["<right-shift>", ".", "8"],
+			"scoring": {
+				"happiness": -5
+			}
+		},
+
+		{
+			"comment": ":(",
+			"pattern": ["<shift>",".","8"],
+			"scoring": {
+				"happiness": -5
+			}
+		},
+
+		{
+			"comment": ":o",
+			"pattern": ["<right-shift>",".","o"],
+			"scoring": {
+				"happiness": 2
+			}
+		},
+		
+		{
+			"comment": ":o",
+			"pattern": ["<shift>",".","o"],
+			"scoring": {
+				"happiness": 2
+			}
+		},
+		
+		{	
+			"comment": "!!",
+			"pattern": ["<shift>", "1", "1"],
+			"scoring": {
+				"happiness": 4
+			}
+		},
+
+		{	
+			"comment": "!!",
+			"pattern": ["<right-shift>", "1", "1"],
+			"scoring": {
+				"happiness": 4
+			}
+		},
+
 		{ 
 			"comment": "slash-slash comment",
 			"pattern": ["<shift>", "7", "7", "<space>"], 
