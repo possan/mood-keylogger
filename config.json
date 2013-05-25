@@ -1,0 +1,53 @@
+{
+	"patterns":
+	[
+		{
+			"comment": "Facebook",
+			"pattern": ["f", "a", "c", "e", "b", "o", "o", "k"],
+			"scoring": {
+				"happiness": 1,
+				"procrastination": 10
+			}
+		},
+
+		{
+			"comment": "Google",
+			"pattern": ["g", "o", "o", "g", "l", "e"],
+			"scoring": {
+				"happiness": 1
+			}
+		},
+
+		{
+			"comment": ":)",
+			"pattern": ["<shift>",".","9"],
+			"scoring": {
+				"happiness": 5
+			}
+		},
+		
+		{	
+			"comment": ":)",
+			"pattern": ["<right-shift>", ".", "9"],
+			"scoring": {
+				"happiness": 5
+			}
+		},
+
+		{ 
+			"comment": "slash-slash comment",
+			"pattern": ["<shift>", "7", "7", "<space>"], 
+			"scoring": {
+				"angry": 5
+			}
+		},
+		
+		{ 
+			"comment": "slash-slash comment",
+			"pattern": ["<right-shift>", "7", "7", "<space>"], 
+			"scoring": {
+				"angry": 5
+			}
+		}
+	]
+}
