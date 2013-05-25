@@ -1,4 +1,7 @@
 var fs = require('fs');
+var http = require('http');
+var querystring = require('querystring');
+
 var Tail = require('tail').Tail;
 var tail = new Tail("/var/log/keystroke.log");
 var historylength = 20;
@@ -30,6 +33,34 @@ tail.on("line", function(data) {
 				match = false;
 		if (match) {
 			console.log('Log emotion:', matcher.scoring);
+			for(var k in matcher.scoring) {
+				var v = matcher.scoring[k];
+
+				console.log('Log key', k, 'value', v);
+
+				var data = querystring.stringify({key: k, value: v});
+
+				var options = {
+				    host: '192.168.200.37',
+				    port: 8089,
+				    path: '/emo',
+				    method: 'POST',
+				    headers: {
+				        'Content-Type': 'application/x-www-form-urlencoded',
+				        'Content-Length': data.length
+				    }
+				};
+
+				var req = http.request(options, function(res) {
+				    res.setEncoding('utf8');
+				    res.on('data', function (chunk) {
+				        console.log("body: " + chunk);
+				    });
+				});
+
+				req.write(data);
+				req.end();
+			}
 		}
 	});
 
